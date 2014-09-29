@@ -1,0 +1,5 @@
+argparse==1.2.1
+mosquitto==1.2.3
+paho-mqtt==1.0
+pyserial==2.7
+wsgiref==0.1.2
