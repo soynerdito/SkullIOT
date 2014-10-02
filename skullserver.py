@@ -1,12 +1,14 @@
 import paho.mqtt.client as mqtt
-import json  
+import json 
+import time 
 from skull import Skull
 #Sample Message = {'cmd': 'BL'}  
 
 
 #Load Skull
 mySkull = Skull()
-mySkull.connect('/dev/ttyACM1')
+#mySkull.connect('/dev/ttyACM1')
+mySkull.connect('\\.\COM4')
 if( mySkull.isOnline ):
     print 'ONLINE'
 else:

@@ -17,4 +17,5 @@ client = mqtt.Client()
 #client.on_message = on_message
 
 client.connect("iot.eclipse.org", 1883, 60)
-client.publish("office_skull", '{"cmd": "BL"}'  , 1)
+client.publish("office_skull", '{"cmd": "BR"}'  , 1)
+client.publish("office_skull", '{"cmd": "BR"}'  , 1)
