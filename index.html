@@ -2,6 +2,21 @@
 <html>
 
   <head>
+	<script language="JavaScript">
+    <!--
+    function postJSON( data ) {
+		var request = new XMLHttpRequest();            
+		request.open("POST", "http://remote-alert.herokuapp.com/skull");                    // POST to the specified url
+		/*request.onreadystatechange = function() {     // Simple event handler
+			if (request.readyState === 4 && callback) // When response is complete
+				callback(request);                    // call the callback.
+		};*/
+		request.setRequestHeader("Content-Type", "application/json");
+		request.send(JSON.stringify(data));
+	}
+    -->
+    </script>
+	
     <meta charset='utf-8'>
     <meta http-equiv="X-UA-Compatible" content="chrome=1">
     <meta name="description" content="Skull IOT : Skull Controlled via web">
@@ -32,6 +47,10 @@
     <div id="main_content_wrap" class="outer">
       <section id="main_content" class="inner">
         <h3>
+		<div>
+		<button type="button" onclick="postJSON({"cmd":"BL"});">Blink Left</button> 
+		<button type="button" onclick="postJSON({"cmd":"BR"});">Blink Right</button>
+		</div>
 <a name="about" class="anchor" href="#about"><span class="octicon octicon-link"></span></a>About</h3>
 
 <p>This is a small weekend project to connect a regular decoration skull to the web. It is a regular skull ornament with a few leds, an Atmega328 and a CC300 wifi module. Using the MQTT protocol it receives messages from the web and turn on leds accordingly.</p>
