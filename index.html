@@ -6,14 +6,20 @@
     <!--
     function postJSON( data ) {
 		var request = new XMLHttpRequest();            
-		request.open("POST", "http://remote-alert.herokuapp.com/skull");                    // POST to the specified url
+		request.open("POST", "https://remote-alert.herokuapp.com/skull");                    // POST to the specified url
 		/*request.onreadystatechange = function() {     // Simple event handler
 			if (request.readyState === 4 && callback) // When response is complete
 				callback(request);                    // call the callback.
 		};*/
 		request.setRequestHeader("Content-Type", "application/json");
 		request.send(JSON.stringify(data));
-	}
+	};
+	function blinkRight(){
+		postJSON( { "cmd": "BR" } );
+	};
+	function blinkLeft(){
+		postJSON( { "cmd": "BL" } );
+	};
     -->
     </script>
 	
@@ -48,8 +54,8 @@
       <section id="main_content" class="inner">
         <h3>
 		<div>
-		<button type="button" onclick="postJSON({"cmd":"BL"});">Blink Left</button> 
-		<button type="button" onclick="postJSON({"cmd":"BR"});">Blink Right</button>
+		<button type="button" onclick="blinkLeft();">Blink Left</button> 
+		<button type="button" onclick="blinkRight();">Blink Right</button>
 		</div>
 <a name="about" class="anchor" href="#about"><span class="octicon octicon-link"></span></a>About</h3>
 
